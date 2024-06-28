@@ -1,0 +1,38 @@
+.blend-img {
+    opacity: 0.90; /* Adjust the opacity value as needed */
+    filter: grayscale(20%) contrast(120%);
+}
+
+.wrapper {
+max-width: 100%;
+overflow: hidden;
+}
+
+.tech {
+white-space: nowrap;
+overflow: hidden;
+display: inline-block;
+animation: tech 10s linear infinite; /* corrected animation name */
+}
+
+.tech span {
+display: inline-block;
+}
+
+@keyframes tech {
+0% {
+    transform: translate3d(0, 0, 0);
+    }
+    100% {
+    transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+  
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
