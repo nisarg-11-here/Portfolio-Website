@@ -4,7 +4,6 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Card from "react-bootstrap/Card";
 import CardBody from "react-bootstrap/esm/CardBody";
-import Photo1 from "../Assets/Nisarg-About-Photo.png";
 import Photo2 from "../Assets/NisargBrand.png"
 import { useMediaQuery } from "react-responsive";
 import Button from "react-bootstrap/esm/Button";
