@@ -2,7 +2,7 @@ body {
     font-family: "basic-sans-black", sans-serif;
     font-weight: 300;
     font-style: normal;
-    background: rgb(174, 215, 255);
+    background: rgb(188, 253, 255);
     padding-top: 71.4px;
 }
 
@@ -22,4 +22,15 @@ body {
     font-family: poleno, sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: auto;
+    height: 100%;
 }

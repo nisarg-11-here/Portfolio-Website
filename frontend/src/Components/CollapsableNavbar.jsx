@@ -3,40 +3,45 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
+import DynamicHeading from "./DynamicHeading";
+import "../App.css";
+import "./ButtonCss.css";
 
 function CollapsableNavbar() {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" fixed="top">
+      <Navbar collapseOnSelect expand="lg" className=" myNavbar" fixed="top" >
         <Container>
-			<Navbar.Brand href="/" className="m-2 poleno-font-semibold" style={{ color: '#2475FC' }}>Portfolio / Nisarg</Navbar.Brand>
+			<Navbar.Brand href="/" className="m-2 poleno-font-semibold"> <DynamicHeading text="Portfolio / Nisarg"/></Navbar.Brand>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="me-auto">
 					<Button
 						variant="outline-primary"
 						className="m-2 mt-1 mb-1 sans-font"
-						href="/Projects"
+						id="projectsButton"
 					>
 						Projects
 					</Button>
 					<Button
 						variant="outline-primary"
-						className="sans-font m-2 mt-1 mb-1"
-						href="/Contact"
+						className="sans-font m-2 mt-1 mb-1 button"
+						id="contactButton"
 					>
 						Connect with me!
 					</Button>
 				</Nav>
 				<Nav>
-				<Button
+				{/* <Button
 					variant="outline-primary"
 					className="m-2 mt-1 mb-1"
-					href="/Contact"
+					id="contactButton"
 				>
 					Not so useful links :)
-				</Button>
+				</Button> */}
+					<svg width="50px" height="50px" className="m-0 p-0" viewBox="0 0 306 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M55 31H154.812L191 94L227.188 31H306L252 127H150.5L114 64L77.5 127H0L55 31Z" fill="#F74F2B" />
+					</svg>
 				</Nav>
 			</Navbar.Collapse>
         </Container>

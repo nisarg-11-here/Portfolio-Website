@@ -1,0 +1,27 @@
+.dynamic-heading {
+    display: inline-block;
+    cursor:help;
+    color: var(--blue);
+  }
+  
+  .dynamic-char {
+    display: inline-block;
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  .dynamic-char:hover {
+    transform: scale(1.25);
+  }
+
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+  border: none; /* Remove border if needed */
+}
+
+.custom-modal .modal-content {
+  background: rgba(255,255,255,0.07);
+    backdrop-filter:blur(15px);
+    overflow:hidden;
+    color: #ffffff;
+    max-height: max-content;
+}

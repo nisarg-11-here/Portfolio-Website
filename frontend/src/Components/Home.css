@@ -28,11 +28,54 @@ display: inline-block;
     }
 }
 
-.card {
+.card-effect {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: var(--blue) !important;
 }
-  
-.card:hover {
+
+.different {
+    background-color: var(--orange) !important;
+}
+
+.custom-text {
+    color: var(--blue);
+    
+}
+
+.custom-text2 {
+    color: var(--orange);
+}
+
+.card-effect:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#icons:hover path{
+    fill: var(--orange);
+    transition: 0.25s;
+}
+
+#footer {
+    bottom: 0;
+}
+
+#wavy-line {
+    stroke: #D33F49;
+}
+
+#text-effect:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
+
+.project-imgs {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor:crosshair ;
+}
+
+.project-imgs:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
 }

@@ -1,0 +1,40 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* padding-left: 11.5%; */
+    background-image: radial-gradient(
+      rgba(0, 0, 0, 0) 1.7px,
+      #fdfdfd 1px
+    );
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+    opacity: 70%;
+    font-size: 16px;
+    line-height: 14px;
+    z-index: 1;
+  }
+  
+  footer::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(#111111);
+    opacity: 0.2;
+  }
+  
+  code {
+    font-family: input-mono, monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

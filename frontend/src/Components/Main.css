@@ -1,0 +1,39 @@
+.panels {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 92.2vh;
+    position: relative;
+  }
+  
+  .panel {
+    scroll-snap-align: start;
+    height: 92.2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .controls {
+    position: fixed;
+    bottom: 70px;
+    left: 85%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+.up:hover path{
+    stroke: var(--orange);
+}
+
+.down:hover path{
+    stroke: var(--orange);
+}
+  
+

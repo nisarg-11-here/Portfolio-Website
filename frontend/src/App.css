@@ -1,3 +1,13 @@
 #root {
-  background: rgb(188, 253, 255);
+  --background: rgb(188, 253, 255);
+  --primaryblue: #0d6efd;
+  --white: #ffffff;
+  --orange: #F74F2B;
+  --green: #008870;
+  --blue: #003366;
+  --background2: #E8E5D4;
+
+
+  background: var(--background2);
 }
+

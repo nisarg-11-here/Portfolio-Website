@@ -1,0 +1,34 @@
+ #customButton {
+    border: var(--orange) solid;
+    color: var(--orange) ;
+}
+
+#customButton:hover {
+    background-color: var(--orange);
+    color: var(--blue);
+}
+
+.myNavbar{
+    border-bottom: var(--orange) solid;
+}
+
+#contactButton {
+    border: var(--orange) solid;
+    color: var(--orange) ;
+}
+
+#contactButton:hover {
+    background-color: var(--orange);
+    color: var(--blue);
+}
+
+
+#projectsButton {
+    border: var(--orange) solid;
+    color: var(--orange) ;
+}
+
+#projectsButton:hover {
+    background-color: var(--orange);
+    color: var(--blue);
+}
