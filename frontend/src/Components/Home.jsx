@@ -15,7 +15,7 @@ function Home() {
       <div>
         <Container
           className="sans-font"
-          style={{ height: "92.2vh", paddingTop: "10%" }}
+          style={{ height: "92.2vh", paddingTop: "7%" }}
         >
           <svg
             width="100"
