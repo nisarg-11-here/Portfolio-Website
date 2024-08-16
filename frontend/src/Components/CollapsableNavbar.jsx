@@ -28,14 +28,14 @@ function CollapsableNavbar() {
             <Nav className="me-auto">
               <Button
                 variant="outline-primary"
-                className="m-2 mt-1 mb-1 sans-font"
+                className="m-2 mt-1 mb-1 sans-font btn-sm"
                 id="projectsButton"
               >
                 Projects
               </Button>
               <Button
                 variant="outline-primary"
-                className="sans-font m-2 mt-1 mb-1 button"
+                className="sans-font m-2 mt-1 mb-1 button btn-sm"
                 id="contactButton"
               >
                 Connect with me!

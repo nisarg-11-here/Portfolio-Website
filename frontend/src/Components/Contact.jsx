@@ -213,7 +213,7 @@ function Contact() {
           </div>
 
           <Button
-            className="sans-font"
+            className="sans-font btn-sm"
             id="customButton"
             variant="outline-primary"
             style={{ display: "inline-block" }}
