@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import LanguageIcon from '@mui/icons-material/Language';
+import { useMediaQuery } from "react-responsive";
 
 
 const DateTime = () => {
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
+    const phoneScreen = useMediaQuery({ minWidth: 576 }); 
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -27,8 +29,8 @@ const DateTime = () => {
 
     return (
         <div>
-            <p className="sans-font display-5">
-                <LanguageIcon fontSize="inherit" className="pb-2"/>{formatDate(currentDateTime)} {formatTime(currentDateTime)}
+           <p className={`sans-font ${phoneScreen ? 'display-5' : 'h6'}`}>
+                <LanguageIcon fontSize="inherit" className={`${phoneScreen ? 'pb-2' : 'pb-1'}`} />{formatDate(currentDateTime)} {formatTime(currentDateTime)}
             </p>
         </div>
     );

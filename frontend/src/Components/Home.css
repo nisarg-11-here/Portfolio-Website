@@ -79,3 +79,26 @@ display: inline-block;
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
 }
+
+
+/* ------------------------------------------------------------------------------------------- */
+/* CSS for responsiveness */
+
+/* Global styles for mobile */
+@media (max-width: 576px) {
+
+    .homepage-container {
+        width: 100%;
+        max-width: 540px;
+
+}
+   .homepage-container .different , 
+   .homepage-container .tech-card {
+        width: 350px;
+   }
+
+   .custom-text {
+        font-size: 0.875rem;
+   }
+    
+}

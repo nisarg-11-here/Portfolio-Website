@@ -10,7 +10,7 @@ import "./ButtonCss.css";
 function CollapsableNavbar() {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className=" myNavbar" fixed="top" >
+      <Navbar collapseOnSelect expand="lg" className="bg-light myNavbar" fixed="top" >
         <Container>
 			<Navbar.Brand href="/" className="m-2 poleno-font-semibold"> <DynamicHeading text="Portfolio / Nisarg"/></Navbar.Brand>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
