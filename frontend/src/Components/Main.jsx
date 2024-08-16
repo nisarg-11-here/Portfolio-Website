@@ -96,6 +96,7 @@ const Main = () => {
         <About />
         <Contact />
       </div>
+      
       <div className="controls">
         <button
           className="up"

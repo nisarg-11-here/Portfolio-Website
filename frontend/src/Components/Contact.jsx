@@ -6,8 +6,11 @@ import DynamicHeading from "./DynamicHeading";
 import { Link } from "react-router-dom";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
+import { useMediaQuery } from "react-responsive";
 
 function Contact() {
+  const phoneScreen = useMediaQuery({ minWidth: 576 });
+
   return (
     <div className="panel" id="panel_4">
       <Container
@@ -21,46 +24,49 @@ function Contact() {
               <span>
                 {/* <line id="text-effect">Get in touch!</line> */}
                 <DynamicHeading text="Get in touch!" />
-
-                <svg
-                  width="287"
-                  height="12"
-                  viewBox="5 0 287 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="wavy-line"
-                >
-                  <path
-                    d="M2 6.49995C2 6.49995 4.61553 12.9999 11.8078 12.9999C19 12.9999 25.5236 1.99998 33.2618 1.99996C41 1.99994 46.884 12.9999 55.942 12.9999C65 12.9999 67.5659 1.99996 76.783 1.99996C86 1.99996 90.1522 12.9999 100.076 12.9999C110 12.9999 111.834 1.99996 120.917 1.99996C130 1.99996 134.921 12.9999 144.21 12.9999C153.5 12.9999 156.603 1.99996 165.051 1.99996C173.5 1.99996 177.189 12.9999 188.345 12.9999C199.5 12.9999 199.871 1.99998 209.186 1.99996C218.5 1.99994 222.958 12.9999 232.479 12.9999C242 12.9999 244 1.99996 253.32 1.99994C262.64 1.99992 269 12.9999 274.5 12.9999C280 13 285 8.50001 285 7.50001"
-                    stroke=""
-                    stroke-width="3"
-                  />
-                </svg>
+                {phoneScreen && (
+                  <svg
+                    width="287"
+                    height="12"
+                    viewBox="5 0 287 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="wavy-line"
+                  >
+                    <path
+                      d="M2 6.49995C2 6.49995 4.61553 12.9999 11.8078 12.9999C19 12.9999 25.5236 1.99998 33.2618 1.99996C41 1.99994 46.884 12.9999 55.942 12.9999C65 12.9999 67.5659 1.99996 76.783 1.99996C86 1.99996 90.1522 12.9999 100.076 12.9999C110 12.9999 111.834 1.99996 120.917 1.99996C130 1.99996 134.921 12.9999 144.21 12.9999C153.5 12.9999 156.603 1.99996 165.051 1.99996C173.5 1.99996 177.189 12.9999 188.345 12.9999C199.5 12.9999 199.871 1.99998 209.186 1.99996C218.5 1.99994 222.958 12.9999 232.479 12.9999C242 12.9999 244 1.99996 253.32 1.99994C262.64 1.99992 269 12.9999 274.5 12.9999C280 13 285 8.50001 285 7.50001"
+                      stroke=""
+                      stroke-width="3"
+                    />
+                  </svg>
+                )}
               </span>
             </Col>
             <Col md="1">
-              <svg
-                width="80px"
-                height="80px"
-                viewBox="0 0 1024 1024"
-                class="icon"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M212.06 633.49c35.65 113.16 481.39 205.46 602-56.32C877.61 439.2 719 63 533 70.78c-132 5.49-407 289.43-320.94 562.71z"
-                  fill="#008870"
-                />
-                <path
-                  d="M363.47 596.15s74.41 80.23 115.75 96.76l-18.6 260.43h94S542.25 635 539.15 596.8c-0.26-3.26 89.91-123 89.91-123l-99 70-16.74-180.56S493.68 575.1 486.45 634z"
-                  fill="#9BBACE"
-                />
-              </svg>
+              {phoneScreen && (
+                <svg
+                  width="80px"
+                  height="80px"
+                  viewBox="0 0 1024 1024"
+                  class="icon"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M212.06 633.49c35.65 113.16 481.39 205.46 602-56.32C877.61 439.2 719 63 533 70.78c-132 5.49-407 289.43-320.94 562.71z"
+                    fill="#008870"
+                  />
+                  <path
+                    d="M363.47 596.15s74.41 80.23 115.75 96.76l-18.6 260.43h94S542.25 635 539.15 596.8c-0.26-3.26 89.91-123 89.91-123l-99 70-16.74-180.56S493.68 575.1 486.45 634z"
+                    fill="#9BBACE"
+                  />
+                </svg>
+              )}
             </Col>
           </Row>
         </h1>
         <div style={{ textAlign: "center" }}>
-          <div className="sans-font m-5 fs-4">
+          <div className={`sans-font fs-4 ${phoneScreen ? 'm-5' : 'm-4 mb-2'}`}>
             Fill <span className="custom-text2">free</span> to connect with me!
           </div>
 
