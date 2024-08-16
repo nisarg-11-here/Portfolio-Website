@@ -183,7 +183,6 @@ function Contact() {
               width="110px"
               viewBox="0 0 24.00 24.00"
               fill="none"
-              transform="rotate(90)"
             >
               <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
