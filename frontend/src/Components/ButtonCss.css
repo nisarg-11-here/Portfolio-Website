@@ -1,6 +1,8 @@
  #customButton {
-    border: var(--orange) solid;
+    border: var(--orange) solid ;
     color: var(--orange) ;
+    border-radius: 8%;
+    border-width: 1.2px;
 }
 
 #customButton:hover {
@@ -15,6 +17,8 @@
 #contactButton {
     border: var(--orange) solid;
     color: var(--orange) ;
+    border-radius: 8%;
+    border-width: 1.2px;
 }
 
 #contactButton:hover {
@@ -26,9 +30,13 @@
 #projectsButton {
     border: var(--orange) solid;
     color: var(--orange) ;
+    border-radius: 8%;
+    border-width: 1.2px;
 }
 
 #projectsButton:hover {
     background-color: var(--orange);
     color: var(--blue);
 }
+
+

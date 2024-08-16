@@ -66,7 +66,7 @@ function Contact() {
           </Row>
         </h1>
         <div style={{ textAlign: "center" }}>
-          <div className={`sans-font fs-4 ${phoneScreen ? 'm-5' : 'm-4 mb-2'}`}>
+          <div className={`sans-font fs-4 ${phoneScreen ? "m-5" : "m-4 mb-2"}`}>
             Fill <span className="custom-text2">free</span> to connect with me!
           </div>
 
@@ -178,36 +178,23 @@ function Contact() {
                     />
                 </IconButton> */}
 
-          <div>
+          <div className="m-4">
             <svg
-              width="110px"
-              viewBox="0 0 24.00 24.00"
+              width="127"
+              height="2"
+              viewBox="0 0 227 2"
               fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-              <g
-                id="SVGRepo_tracerCarrier"
+              <line
+                x1="0.995605"
+                y1="1"
+                x2="226.004"
+                y2="1"
+                stroke="black"
+                stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke="#CCCCCC"
-                stroke-width="0.12000000000000005"
               />
-
-              <g id="SVGRepo_iconCarrier">
-                {" "}
-                <g id="Interface / Line_Xl">
-                  {" "}
-                  <path
-                    id="Vector"
-                    d="M12 21V3"
-                    stroke="#000000"
-                    stroke-width="0.2400000000000001"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />{" "}
-                </g>{" "}
-              </g>
             </svg>
           </div>
 

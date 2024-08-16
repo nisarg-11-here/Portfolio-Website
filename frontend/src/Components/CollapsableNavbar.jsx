@@ -35,7 +35,7 @@ function CollapsableNavbar() {
               </Button>
               <Button
                 variant="outline-primary"
-                className="sans-font m-2 mt-1 mb-1 button btn-sm"
+                className="sans-font m-2 mt-1 mb-1 btn-sm"
                 id="contactButton"
               >
                 Connect with me!
