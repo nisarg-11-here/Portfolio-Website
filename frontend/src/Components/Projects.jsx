@@ -6,6 +6,7 @@ import DynamicHeading from "./DynamicHeading";
 import Project1 from "../Assets/Project-imgs/CodeCommunity.png";
 import Project2 from "../Assets/Project-imgs/VCLogin.png";
 import Project3 from "../Assets/Project-imgs/PFVwithEditor2.png";
+import PCubed from "../Assets/Project-imgs/PC-1.png";
 import ProjectModal from "./ProjectModal";
 import Carousel from "react-bootstrap/Carousel";
 import { useMediaQuery } from "react-responsive";
@@ -18,10 +19,11 @@ function Projects() {
     image: "",
     description: "",
     tech: "",
+    link: "",
   });
 
-  const handleShowModal = (title, image, description, tech) => {
-    setSelectedProject({ title, image, description, tech });
+  const handleShowModal = (title, image, description, tech, link) => {
+    setSelectedProject({ title, image, description, tech, link });
     setModalShow(true);
   };
 
@@ -70,8 +72,35 @@ function Projects() {
             </Col>
           </Row>
         </h1>
-
+        {/*  */}
         <Carousel data-bs-theme="dark">
+          <Carousel.Item style={{ height: phoneScreen ? "400px" : "300px" }}>
+            <div
+              className="sans-font m-1"
+              onClick={() =>
+                handleShowModal(
+                  "PCubed",
+                  PCubed,
+                  "This was a group project made for a university class with a group of 12 people, who were assigned real Software Management roles, namely, Project Manager (Me), Built Master, Test and Dev teams, Risk Officers and Triage team. We worked with a Stakholder to build the first part of web-app which he desired to furture work on. Our task included making a interactive and visually appealing UI experience, make a structured database catalog to store Projectile Point Artifacts. It was a fun project to work on and I learned so many things about software development and management and through my role of Project Manager, I gained some insights on what it takes to work with a larger team some of the challenges I tackled were communication and on time product delivery, when you have a diverse group of people with unique schedules.",
+                  "PostgreSQL, React, MaterialUI, Docker",
+                  "https://github.com/UniversityOfSaskatchewanCMPT371/term-project-2024-team-4"
+                )
+              }
+            >
+              <img
+                className="d-block w-100 project-imgs"
+                src={PCubed}
+                alt="4th Project"
+                style={{
+                  maxWidth: phoneScreen ? "500px" : "270px",
+                  height: "auto",
+                  margin: "0 auto",
+                }}
+              />
+            </div>
+            <Carousel.Caption>PCubed</Carousel.Caption>
+          </Carousel.Item>
+
           <Carousel.Item style={{ height: phoneScreen ? "400px" : "300px" }}>
             <div
               className="sans-font m-1"
@@ -80,7 +109,8 @@ function Projects() {
                   "Code Community",
                   Project1,
                   "The Code Community is one of the fastest and biggest projects that I have made for my class CMPT 353. This course had a set of requirements for the project and they wanted us to make clone of Reddit, with fewer features. My project features some of important features of reddit, such as assorting all reddits under channels and calling them topic, search using topic, channels and tag names, Joining channels and topics, and sub-reddits. This project uses MySQL as the database. Three words to describe it: learning, deadline, fun",
-                  "React, Express NodeJS, MySQL, Bootstrap"
+                  "React, Express NodeJS, MySQL, Bootstrap",
+                  "https://git.cs.usask.ca/ujc862/project-353-the-code-community.git"
                 )
               }
             >
@@ -89,7 +119,7 @@ function Projects() {
                 src={Project1}
                 alt="First Project"
                 style={{
-                  maxWidth: phoneScreen ? "500px": "270px",
+                  maxWidth: phoneScreen ? "500px" : "270px",
                   height: "auto",
                   margin: "0 auto",
                 }}
@@ -102,7 +132,13 @@ function Projects() {
             <div
               className="sans-font "
               onClick={() =>
-                handleShowModal("Volunteer Connect", Project2, "hehe", "hehe")
+                handleShowModal(
+                  "Volunteer Connect",
+                  Project2,
+                  "This was my first ever group project based on Software Development, where I leaarned some basic concepts of Agile - Scrum, software development and working in a team. This project made me confident to talk with team members and how to build project in asychronomous environment. The best and worst part about this projet was learned new technology while creating deliverables. I also learned how important is it for a team to have a leader, as we didn't have any at first but as we went into the project we felt we needed someone to guide us, and that's when I took the initiative to lead the team as the project idea was mine.",
+                  "MongoDB, React, Express, Docker",
+                  "https://git.cs.usask.ca/ujc862/cmpt-370-fall-2023.git"
+                )
               }
             >
               <img
@@ -110,7 +146,7 @@ function Projects() {
                 src={Project2}
                 alt="First Project"
                 style={{
-                  maxWidth: phoneScreen ? "500px": "270px",
+                  maxWidth: phoneScreen ? "500px" : "270px",
                   height: "auto",
                   margin: "0 auto",
                 }}
@@ -125,8 +161,9 @@ function Projects() {
                 handleShowModal(
                   "Pathfinding Visualizer",
                   Project3,
-                  "hehe",
-                  "hehe"
+                  "This was one of my personal project made in summer 2024, when I was trying to learn new algorithms and started seraching for shortest distance algorithm.",
+                  "Python, PyGame",
+                  "https://github.com/UniversityOfSaskatchewanCMPT371/term-project-2024-team-4"
                 )
               }
             >
@@ -135,7 +172,7 @@ function Projects() {
                 src={Project3}
                 alt="First Project"
                 style={{
-                  maxWidth: phoneScreen ? "500px": "270px",
+                  maxWidth: phoneScreen ? "500px" : "270px",
                   height: "auto",
                   margin: "0 auto",
                 }}
@@ -153,6 +190,7 @@ function Projects() {
         projectImage={selectedProject.image}
         projectDescription={selectedProject.description}
         projectTech={selectedProject.tech}
+        projectLink={selectedProject.link}
       />
     </div>
   );

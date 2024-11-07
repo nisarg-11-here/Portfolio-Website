@@ -25,3 +25,10 @@
     color: #ffffff;
     max-height: max-content;
 }
+
+.TextModalCSS {
+  background-color: rgba(21, 22, 20, 0.647);
+  border-radius: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
