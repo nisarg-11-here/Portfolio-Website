@@ -9,8 +9,8 @@ footer {
     padding: 20px;
     /* padding-left: 11.5%; */
     background-image: radial-gradient(
-      rgba(0, 0, 0, 0) 1.7px,
-      #fdfdfd 1px
+      rgba(0, 220, 88, 0) 0px,
+      #afafafb2 1px
     );
     background-size: 4px 4px;
     backdrop-filter: blur(3px);

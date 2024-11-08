@@ -12,7 +12,7 @@ export function Footer() {
           <code className="custom-text">
             {" "}
             Designed &amp; built by{" "}
-            <code className="custom-text2">Nisarg Chaudhary</code>{" "}
+            <code className="custom-text3">Nisarg Chaudhary</code>{" "}
           </code>
         </footer>
       )}
