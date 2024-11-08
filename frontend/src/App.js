@@ -7,6 +7,7 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import { Footer } from './Components/Footer';
 import "./Components/Footer.css";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <CollapsableNavbar />
           
             <Footer  />
+            <Analytics />
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/Project" element={<Projects />} />
