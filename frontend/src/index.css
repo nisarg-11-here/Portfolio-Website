@@ -10,6 +10,7 @@ body {
     font-family: "basic-sans-black", sans-serif;
     font-weight: 300;
     font-style: normal;
+    text-decoration: solid var(--fresh-black);
 }
 
 .poleno-font-bold {

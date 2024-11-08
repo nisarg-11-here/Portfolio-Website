@@ -15,7 +15,7 @@ function CollapsableNavbar() {
       <Navbar
         collapseOnSelect
         expand="lg"
-        className="bg-light myNavbar"
+        className="myNavbar"
         fixed="top"
       >
         <Container>
@@ -28,15 +28,15 @@ function CollapsableNavbar() {
             <Nav className="me-auto">
               <Button
                 variant="outline-primary"
-                className="m-2 mt-1 mb-1 sans-font btn-sm"
-                id="projectsButton"
+                className="m-2 mt-1 mb-1 sans-font btn-sm border rounded-1"
+                id="customButton"
               >
                 Projects
               </Button>
               <Button
                 variant="outline-primary"
-                className="sans-font m-2 mt-1 mb-1 btn-sm"
-                id="contactButton"
+                className="sans-font m-2 mt-1 mb-1 btn-sm border rounded-1"
+                id="customButton"
               >
                 Connect with me!
               </Button>
@@ -60,7 +60,7 @@ function CollapsableNavbar() {
                 >
                   <path
                     d="M55 31H154.812L191 94L227.188 31H306L252 127H150.5L114 64L77.5 127H0L55 31Z"
-                    fill="#F74F2B"
+                    fill="#ce796bff"
                   />
                 </svg>
               )}

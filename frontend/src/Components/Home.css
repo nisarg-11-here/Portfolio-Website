@@ -30,21 +30,33 @@ display: inline-block;
 
 .card-effect {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    background-color: var(--blue) !important;
+    background-color: var(--platinum) !important;
+}
+
+.Card-Link {
+    color: var(--fresh-black);
+    background-color: transparent;
+    /* text-decoration: none; */
 }
 
 .different {
-    background-color: var(--orange) !important;
+    background-color: var(--old-rose) !important;
 }
 
 .custom-text {
-    color: var(--blue);
+    color: var(--fresh-black);
     
 }
 
 .custom-text2 {
-    color: var(--orange);
+    color: var(--old-rose);
 }
+
+
+.custom-text3 {
+    color: var(--platinum);
+}
+
 
 .card-effect:hover {
     transform: scale(1.03);
@@ -52,7 +64,7 @@ display: inline-block;
 }
 
 #icons:hover path{
-    fill: var(--orange);
+    fill: var(--old-rose);
     transition: 0.25s;
 }
 
@@ -61,7 +73,7 @@ display: inline-block;
 }
 
 #wavy-line {
-    stroke: #D33F49;
+    stroke: var(--old-rose);
 }
 
 #text-effect:hover {

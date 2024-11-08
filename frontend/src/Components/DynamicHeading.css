@@ -1,7 +1,7 @@
 .dynamic-heading {
     display: inline-block;
     cursor:help;
-    color: var(--blue);
+    color: var(--platinum);
   }
   
   .dynamic-char {
@@ -15,15 +15,16 @@
 
 .custom-modal .modal-header,
 .custom-modal .modal-footer {
-  border: none; /* Remove border if needed */
+  border: none;
 }
 
 .custom-modal .modal-content {
-  background: rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.07);
     backdrop-filter:blur(15px);
     overflow:hidden;
     color: #ffffff;
     max-height: max-content;
+    border: solid #ffffff4e;
 }
 
 .TextModalCSS {

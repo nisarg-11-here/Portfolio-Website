@@ -1,20 +1,21 @@
  #customButton {
-    border: var(--orange) solid ;
-    color: var(--orange) ;
-    border-radius: 8%;
+    border: var(--platinum) solid ;
+    color: var(--platinum) ;
+    border-radius: 5%;
     border-width: 1.2px;
 }
 
 #customButton:hover {
-    background-color: var(--orange);
-    color: var(--blue);
+    background-color: var(--platinum);
+    color: var(--fresh-black);
 }
 
 .myNavbar{
-    border-bottom: var(--orange) solid;
+    border-bottom: var(--platinum) solid;
+    background-color: var(--fresh-black);
 }
 
-#contactButton {
+/* #contactButton {
     border: var(--orange) solid;
     color: var(--orange) ;
     border-radius: 8%;
@@ -39,4 +40,4 @@
     color: var(--blue);
 }
 
-
+ */

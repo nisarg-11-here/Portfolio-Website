@@ -6,8 +6,16 @@
   --green: #008870;
   --blue: #003366;
   --background2: #E8E5D4;
+  --polynesian-blue: #0e4494ff;
+  --sky-blue: #86cae9ff;
+  --light-coral: #ea8589ff;
+  --misty-rose: #e7cbceff;
+  --cambridge-blue: #87baabff;
 
+  --fresh-black: #1a1a1aff;
+  --platinum: #e5e1ddff;
+  --old-rose: #ce796bff;
 
-  background: var(--background2);
+  background: var(--fresh-black);
 }
 

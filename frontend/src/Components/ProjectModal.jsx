@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import "./DynamicHeading.css";
+import "./ButtonCss.css";
+import "../index.css";
 
 function ProjectModal({
   show,
@@ -49,7 +51,9 @@ function ProjectModal({
               <h5> Technologies </h5>
               {projectTech}
               <hr />
-              <Button variant="light" onClick={handleLink} className="">
+              <Button onClick={handleLink} 
+                variant="outline-light"
+                >
                 See it yourself!
               </Button>
             </Col>

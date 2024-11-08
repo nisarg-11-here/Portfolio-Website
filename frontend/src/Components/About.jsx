@@ -19,7 +19,7 @@ function About() {
         className="sans-font"
         style={{ height: "92.2vh", paddingTop: "7%" }}
       >
-        <h1 className="poleno-font-semibold text-primary p-2 mb-3">
+        <h1 className="poleno-font-semibold p-2 mb-3">
           <Row>
             <Col>
               {phoneScreen && (
@@ -33,11 +33,11 @@ function About() {
                 >
                   <path
                     d="M513.92 68.71h12A116.59 116.59 0 0 1 642.5 185.3v728.84a41.15 41.15 0 0 1-41.15 41.15H438.48a41.15 41.15 0 0 1-41.15-41.15V185.3A116.59 116.59 0 0 1 513.92 68.71z"
-                    fill="#4C9589"
+                    fill="#ce796bff"
                   />
                   <path
                     d="M424 752c-53.89 0-131.52-8.8-183.29-84.94-41.15-60.51-60.32-156.89-60.32-303.31a57.1 57.1 0 1 1 114.19 0c0 119.08 13.64 199.53 40.55 239.1 14.68 21.58 34.66 35 88.86 35A57.1 57.1 0 1 1 424 752zM603.83 584.48a57.1 57.1 0 0 1 0-114.19c50.76 0 78.59-8.07 96-27.86 24.69-28 37.2-87.16 37.2-175.79a57.1 57.1 0 1 1 114.19 0c0 120.56-20.88 200.4-65.72 251.29-51.96 58.98-124.38 66.55-181.67 66.55z"
-                    fill="#4C9589"
+                    fill="#ce796bff"
                   />
                   <path
                     d="M438.25 175.29l33.56 0 0 83.94-33.56 0 0-83.94Z"
@@ -113,7 +113,7 @@ function About() {
                   />
                   <path
                     d="M183.54 250.68S200 328 239.21 328 299 263 299 263l-35.05 22.68-28.87-68-14.43 59.79z"
-                    fill="#D77A88"
+                    fill="#e5e1ddff"
                   />
                 </svg>
               )}
@@ -142,9 +142,9 @@ function About() {
             </Col>
           </Row>
         </h1>
-        <Row className="text-white" style={{}}>
+        <Row className="" style={{}}>
           <Col className="">
-            <Card className=" text-white rounded-3 p-3 card-effect">
+            <Card className=" rounded-3 p-3 card-effect">
               <CardBody
                 className="sans-font"
                 style={{ fontSize: phoneScreen ? "16px" : "12px" }}
@@ -196,7 +196,7 @@ function About() {
         <Button
           variant="outline-primary"
           id="customButton"
-          className="sans-font mt-2 mb-1 border-2 btn-sm"
+          className="sans-font mt-2 mb-1 border rounded-1"
           href="/Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
