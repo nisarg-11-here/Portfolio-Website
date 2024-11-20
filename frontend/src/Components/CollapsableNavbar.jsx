@@ -12,12 +12,7 @@ function CollapsableNavbar() {
   const phoneScreen = useMediaQuery({ minWidth: 576 });
   return (
     <div>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        className="myNavbar"
-        fixed="top"
-      >
+      <Navbar collapseOnSelect expand="lg" className="myNavbar" fixed="top">
         <Container>
           <Navbar.Brand href="/" className="m-2 poleno-font-semibold">
             {" "}
@@ -26,17 +21,17 @@ function CollapsableNavbar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Button
-                variant="outline-primary"
-                className="m-2 mt-1 mb-1 sans-font btn-sm border rounded-1"
-                id="customButton"
-              >
-                Projects
-              </Button>
+                <Button
+                  variant="outline-primary"
+                  className="m-2 mt-1 mb-1 sans-font btn-sm border rounded-1"
+                  id="projectsButton"
+                >
+                  Projects
+                </Button>
               <Button
                 variant="outline-primary"
                 className="sans-font m-2 mt-1 mb-1 btn-sm border rounded-1"
-                id="customButton"
+                id="contactButton"
               >
                 Connect with me!
               </Button>

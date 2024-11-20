@@ -10,34 +10,35 @@
     color: var(--fresh-black);
 }
 
+
 .myNavbar{
     border-bottom: var(--platinum) solid;
     background-color: var(--fresh-black);
 }
 
-/* #contactButton {
-    border: var(--orange) solid;
-    color: var(--orange) ;
-    border-radius: 8%;
+#contactButton {
+    border: var(--platinum) solid ;
+    color: var(--platinum) ;
+    border-radius: 5%;
     border-width: 1.2px;
 }
 
 #contactButton:hover {
-    background-color: var(--orange);
-    color: var(--blue);
+    background-color: var(--platinum);
+    color: var(--fresh-black);
 }
 
 
 #projectsButton {
-    border: var(--orange) solid;
-    color: var(--orange) ;
-    border-radius: 8%;
+    border: var(--platinum) solid ;
+    color: var(--platinum) ;
+    border-radius: 5%;
     border-width: 1.2px;
 }
 
 #projectsButton:hover {
-    background-color: var(--orange);
-    color: var(--blue);
+    background-color: var(--platinum);
+    color: var(--fresh-black);
 }
 
- */
+

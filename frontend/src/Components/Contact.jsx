@@ -67,7 +67,7 @@ function Contact() {
         </h1>
         <div style={{ textAlign: "center" }}>
           <div className={`sans-font custom-text3 fs-4 ${phoneScreen ? "m-5" : "m-4 mb-2"}`}>
-            Fill <span className="custom-text2">free</span> to connect with me!
+            Feel <span className="custom-text2">free</span> to connect with me!
           </div>
 
           <br />
