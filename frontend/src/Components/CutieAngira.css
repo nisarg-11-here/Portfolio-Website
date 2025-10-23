@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background: rgb(188, 253, 255);
   position: relative;
   overflow: hidden;
   padding: 20px;
@@ -23,59 +23,60 @@
 .heart {
   position: absolute;
   font-size: 30px;
-  filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5));
+  filter: drop-shadow(0 0 10px rgba(234, 133, 137, 0.5));
 }
 
 .content-wrapper {
   text-align: center;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.95);
+  background: #e5e1ddff;
   padding: 60px 40px;
-  border-radius: 30px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.15);
   max-width: 600px;
   width: 100%;
   position: relative;
-  backdrop-filter: blur(10px);
+  border: 2px solid #1a1a1aff;
 }
 
 .question-title {
   font-size: 2.5rem;
-  color: #ff1493;
+  color: #1a1a1aff;
   margin-bottom: 50px;
-  font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
   line-height: 1.3;
+  font-family: "basic-sans-black", sans-serif;
 }
 
 .buttons-container {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   position: relative;
-  min-height: 200px;
+  min-height: 80px;
 }
 
 .yes-button {
-  padding: 20px 50px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  background: linear-gradient(135deg, #ff1493, #ff69b4);
-  color: white;
-  border: none;
-  border-radius: 50px;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: transparent;
+  color: #1a1a1aff;
+  border: 1.5px solid #1a1a1aff;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
   position: relative;
   z-index: 2;
+  font-family: "basic-sans-black", sans-serif;
 }
 
 .yes-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+  background-color: #ce796bff;
+  color: #e5e1ddff;
+  border-color: #ce796bff;
 }
 
 .yes-button:disabled {
@@ -86,19 +87,21 @@
 .no-button {
   padding: 15px 40px;
   font-size: 1.3rem;
-  font-weight: bold;
-  background: linear-gradient(135deg, #808080, #a9a9a9);
-  color: white;
-  border: none;
-  border-radius: 50px;
+  font-weight: 600;
+  background: transparent;
+  color: #1a1a1aff;
+  border: 1.5px solid #1a1a1aff;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(128, 128, 128, 0.4);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   z-index: 1;
+  font-family: "basic-sans-black", sans-serif;
 }
 
 .no-button:hover {
-  transform: scale(1.05);
+  background-color: #ea8589ff;
+  color: #e5e1ddff;
+  border-color: #ea8589ff;
 }
 
 .modal-overlay {
@@ -107,7 +110,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(26, 26, 26, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,46 +119,50 @@
 }
 
 .modal-content {
-  background: linear-gradient(135deg, #fff, #ffe6f0);
+  background: #e5e1ddff;
   padding: 50px 40px;
-  border-radius: 30px;
-  box-shadow: 0 20px 60px rgba(255, 20, 147, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.3);
   text-align: center;
   max-width: 500px;
   width: 100%;
+  border: 2px solid #1a1a1aff;
 }
 
 .modal-content h2 {
   font-size: 3rem;
-  color: #ff1493;
+  color: #ce796bff;
   margin-bottom: 20px;
-  font-weight: 800;
+  font-weight: 700;
+  font-family: "basic-sans-black", sans-serif;
 }
 
 .modal-message {
   font-size: 1.5rem;
-  color: #333;
+  color: #1a1a1aff;
   margin-bottom: 30px;
   line-height: 1.6;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: "basic-sans-black", sans-serif;
 }
 
 .close-button {
   padding: 15px 40px;
   font-size: 1.2rem;
-  font-weight: bold;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  border: none;
-  border-radius: 25px;
+  font-weight: 600;
+  background: transparent;
+  color: #1a1a1aff;
+  border: 1.5px solid #1a1a1aff;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+  font-family: "basic-sans-black", sans-serif;
 }
 
 .close-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+  background-color: #87baabff;
+  color: #e5e1ddff;
+  border-color: #87baabff;
 }
 
 /* Mobile Responsiveness */
