@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -13,17 +14,17 @@ const NO_LABELS = [
   "I'm gonna cry",
 ];
 
+const INITIAL_GIF = "14456779"; // initial load
+const FINAL_SAD_GIF = "14456797"; // last gif shown on step 3 click
+const YES_GIF = "14456794"; // on Yes
+
 // Map nextStep -> gif post id after a No click leads to that step
 const NO_STEP_TO_GIF = {
-  1: "14456827",
-  2: "14456827",
-  3: "14456837",
-  4: "14456800",
+  1: "14456827", // after first No
+  2: "14456837", // ensure change after "Are you sure?"
+  3: "14456800",
+  4: FINAL_SAD_GIF, // show last gif when clicking "Angu don't do this to me"
 };
-
-const INITIAL_GIF = "14456779"; // initial load
-const FINAL_SAD_GIF = "14456797"; // after last No is clicked again
-const YES_GIF = "14456794"; // on Yes
 
 function renderTenorInto(container, postId) {
   if (!container) return;
@@ -75,7 +76,7 @@ const Confetti = ({ active, durationMs = 2500, pieceCount = 120 }) => {
   }, [active, durationMs, pieceCount]);
 
   if (!active) return null;
-  return (
+  return createPortal(
     <div className="confetti-container">
       {pieces.map((p) => (
         <div
@@ -89,7 +90,8 @@ const Confetti = ({ active, durationMs = 2500, pieceCount = 120 }) => {
           }}
         />
       ))}
-    </div>
+    </div>,
+    document.body
   );
 };
 
@@ -120,8 +122,8 @@ const CutieAngira = () => {
       const nextGif = NO_STEP_TO_GIF[next] || INITIAL_GIF;
       setCurrentGif(nextGif);
     } else {
-      // Last instance clicked again
-      setCurrentGif(FINAL_SAD_GIF);
+      // At last step ("I'm gonna cry"), keep the current gif unchanged
+      return;
     }
   };
 
@@ -136,19 +138,17 @@ const CutieAngira = () => {
         <Container className="sans-font invite-container">
           <Row className="justify-content-center">
             <Col md={8} lg={6}>
-              <Card className="rounded-3 p-3 card-effect gif-card">
-                <div ref={gifContainerRef} />
-              </Card>
+              <div className="gif-wrapper">
+                <div ref={gifContainerRef} className="gif-embed" />
+              </div>
             </Col>
           </Row>
 
           <Row className="justify-content-center mt-4">
             <Col md={8} lg={6}>
-              <Card className="rounded-3 p-3 card-effect invite-question">
-                <div className="custom-text text-center">
-                  <p className="display-6 m-0"><strong>Would you like to watch a movie with me?</strong></p>
-                </div>
-              </Card>
+              <div className="custom-text text-center poleno-font-semibold invite-title" aria-live="polite">
+                Would you like to watch a movie with me?
+              </div>
               <div className="invite-buttons">
                 <button
                   className="invite-button sans-font"
