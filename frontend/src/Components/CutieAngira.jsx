@@ -48,15 +48,26 @@ function renderTenorInto(container, postId) {
   container.appendChild(script);
 }
 
-const Confetti = ({ active, durationMs = 2500, pieceCount = 120 }) => {
+const Confetti = ({ active, durationMs = 2500, pieceCount = 120, sourceRef }) => {
   const [pieces, setPieces] = useState([]);
   useEffect(() => {
     if (!active) {
       setPieces([]);
       return;
     }
+    // Measure the source area (gif wrapper) so confetti appears to originate from it
+    const rect = sourceRef?.current?.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    const originLeft = rect ? rect.left : 0;
+    const originTop = rect ? rect.top + rect.height * 0.25 : 0; // bias towards upper-middle
+    const originWidth = rect ? rect.width : viewportWidth;
+    const originHeight = rect ? rect.height * 0.5 : viewportHeight * 0.5;
+
     const newPieces = Array.from({ length: pieceCount }).map((_, i) => {
-      const left = Math.random() * 100; // vw
+      const leftPx = originLeft + Math.random() * originWidth;
+      const topPx = originTop + Math.random() * originHeight;
       const delay = Math.random() * 300; // ms
       const fallTime = 1800 + Math.random() * 1600; // ms
       const colorPalette = [
@@ -68,12 +79,15 @@ const Confetti = ({ active, durationMs = 2500, pieceCount = 120 }) => {
         "#ffbe0b",
       ];
       const color = colorPalette[i % colorPalette.length];
-      return { id: i, left, delay, fallTime, color };
+      const driftX = (Math.random() * 80 - 40); // px
+      const sizeW = 8 + Math.random() * 8; // 8-16px
+      const sizeH = 10 + Math.random() * 10; // 10-20px
+      return { id: i, leftPx, topPx, delay, fallTime, color, driftX, sizeW, sizeH };
     });
     setPieces(newPieces);
     const timer = setTimeout(() => setPieces([]), durationMs + 1000);
     return () => clearTimeout(timer);
-  }, [active, durationMs, pieceCount]);
+  }, [active, durationMs, pieceCount, sourceRef]);
 
   if (!active) return null;
   return createPortal(
@@ -83,10 +97,14 @@ const Confetti = ({ active, durationMs = 2500, pieceCount = 120 }) => {
           key={p.id}
           className="confetti-piece"
           style={{
-            left: `${p.left}vw`,
+            left: `${p.leftPx}px`,
+            top: `${p.topPx}px`,
             backgroundColor: p.color,
-            animationDuration: `${p.fallTime}ms, 700ms`,
-            animationDelay: `${p.delay}ms, ${p.delay}ms`,
+            width: `${p.sizeW}px`,
+            height: `${p.sizeH}px`,
+            animationDuration: `${p.fallTime}ms`,
+            animationDelay: `${p.delay}ms`,
+            ['--driftX']: `${p.driftX}px`,
           }}
         />
       ))}
@@ -100,6 +118,7 @@ const CutieAngira = () => {
   const [currentGif, setCurrentGif] = useState(INITIAL_GIF);
   const [accepted, setAccepted] = useState(false);
   const gifContainerRef = useRef(null);
+  const gifWrapperRef = useRef(null);
 
   // Button scales: shrink No and grow Yes at same rate per step
   const scaleFactor = 0.15;
@@ -138,7 +157,7 @@ const CutieAngira = () => {
         <Container className="sans-font invite-container">
           <Row className="justify-content-center">
             <Col md={8} lg={6}>
-              <div className="gif-wrapper">
+              <div className="gif-wrapper" ref={gifWrapperRef}>
                 <div ref={gifContainerRef} className="gif-embed" />
               </div>
             </Col>
@@ -176,7 +195,7 @@ const CutieAngira = () => {
             </Col>
           </Row>
         </Container>
-        <Confetti active={accepted} />
+        <Confetti active={accepted} sourceRef={gifWrapperRef} />
       </div>
     </div>
   );
