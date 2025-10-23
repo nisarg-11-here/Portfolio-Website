@@ -48,7 +48,7 @@ function renderTenorInto(container, postId) {
   container.appendChild(script);
 }
 
-const Confetti = ({ active, durationMs = 2500, pieceCount = 120, sourceRef }) => {
+const Confetti = ({ active, durationMs = 2500, pieceCount = 120, sourceRef, mountRef }) => {
   const [pieces, setPieces] = useState([]);
   useEffect(() => {
     if (!active) {
@@ -64,6 +64,9 @@ const Confetti = ({ active, durationMs = 2500, pieceCount = 120, sourceRef }) =>
     const originTop = rect ? rect.top + rect.height * 0.25 : 0; // bias towards upper-middle
     const originWidth = rect ? rect.width : viewportWidth;
     const originHeight = rect ? rect.height * 0.5 : viewportHeight * 0.5;
+
+    const containerHeight = rect ? rect.height : viewportHeight * 0.5;
+    const endY = containerHeight + 120; // px beyond bottom
 
     const newPieces = Array.from({ length: pieceCount }).map((_, i) => {
       const leftPx = originLeft + Math.random() * originWidth;
@@ -82,7 +85,7 @@ const Confetti = ({ active, durationMs = 2500, pieceCount = 120, sourceRef }) =>
       const driftX = (Math.random() * 80 - 40); // px
       const sizeW = 8 + Math.random() * 8; // 8-16px
       const sizeH = 10 + Math.random() * 10; // 10-20px
-      return { id: i, leftPx, topPx, delay, fallTime, color, driftX, sizeW, sizeH };
+      return { id: i, leftPx, topPx, delay, fallTime, color, driftX, sizeW, sizeH, endY };
     });
     setPieces(newPieces);
     const timer = setTimeout(() => setPieces([]), durationMs + 1000);
@@ -90,6 +93,7 @@ const Confetti = ({ active, durationMs = 2500, pieceCount = 120, sourceRef }) =>
   }, [active, durationMs, pieceCount, sourceRef]);
 
   if (!active) return null;
+  if (!mountRef?.current) return null;
   return createPortal(
     <div className="confetti-container">
       {pieces.map((p) => (
@@ -105,11 +109,13 @@ const Confetti = ({ active, durationMs = 2500, pieceCount = 120, sourceRef }) =>
             animationDuration: `${p.fallTime}ms`,
             animationDelay: `${p.delay}ms`,
             ['--driftX']: `${p.driftX}px`,
+            ['--endY']: `${p.endY}px`,
+            ['--fallTime']: `${p.fallTime}ms`,
           }}
         />
       ))}
     </div>,
-    document.body
+    mountRef.current
   );
 };
 
@@ -119,6 +125,7 @@ const CutieAngira = () => {
   const [accepted, setAccepted] = useState(false);
   const gifContainerRef = useRef(null);
   const gifWrapperRef = useRef(null);
+  const confettiMountRef = useRef(null);
 
   // Button scales: shrink No and grow Yes at same rate per step
   const scaleFactor = 0.15;
@@ -158,6 +165,7 @@ const CutieAngira = () => {
           <Row className="justify-content-center">
             <Col md={8} lg={6}>
               <div className="gif-wrapper" ref={gifWrapperRef}>
+                <div className="confetti-local-mount" ref={confettiMountRef} />
                 <div ref={gifContainerRef} className="gif-embed" />
               </div>
             </Col>
@@ -195,7 +203,7 @@ const CutieAngira = () => {
             </Col>
           </Row>
         </Container>
-        <Confetti active={accepted} sourceRef={gifWrapperRef} />
+        <Confetti active={accepted} sourceRef={gifWrapperRef} mountRef={confettiMountRef} />
       </div>
     </div>
   );
