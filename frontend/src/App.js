@@ -5,6 +5,7 @@ import CollapsableNavbar from './Components/CollapsableNavbar';
 import Projects from './Components/Projects';
 import About from './Components/About';
 import Contact from './Components/Contact';
+import CutieAngira from './Components/CutieAngira';
 import { Footer } from './Components/Footer';
 import "./Components/Footer.css";
 import { Analytics } from '@vercel/analytics/react';
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/Project" element={<Projects />} />
                 <Route path="/About" element={<About />} />
                 <Route path="/Contact" element={<Contact />} />
+                <Route path="/cutieangira" element={<CutieAngira />} />
             </Routes>
       </div>
     );
