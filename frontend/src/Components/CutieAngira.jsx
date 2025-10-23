@@ -16,11 +16,10 @@ const CutieAngira = () => {
   };
 
   const handleNoHover = () => {
-    // Generate random position within viewport
-    const maxX = window.innerWidth - 150; // button width
-    const maxY = window.innerHeight - 60; // button height
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
+    // Generate random position within a tighter range (300px x 200px area)
+    const maxOffset = 150; // movement range from center
+    const randomX = (Math.random() - 0.5) * maxOffset * 2;
+    const randomY = (Math.random() - 0.5) * 100; // smaller vertical range
     
     setNoButtonPosition({ x: randomX, y: randomY });
   };
@@ -75,69 +74,31 @@ const CutieAngira = () => {
           ))}
         </div>
 
-        <motion.h1 
-          className="question-title"
-          animate={{ 
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
+        <h1 className="question-title">
           Will you watch a movie with me? 🎬
-        </motion.h1>
+        </h1>
 
         <div className="buttons-container">
-          <motion.button
+          <button
             className="yes-button"
             onClick={handleYesClick}
             disabled={buttonClicked}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{
-              boxShadow: [
-                "0 0 20px rgba(255, 105, 180, 0.5)",
-                "0 0 40px rgba(255, 105, 180, 0.8)",
-                "0 0 20px rgba(255, 105, 180, 0.5)",
-              ]
-            }}
-            transition={{
-              boxShadow: {
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            }}
           >
             Yes! 💕
-          </motion.button>
+          </button>
 
-          <motion.button
+          <button
             className="no-button"
             onMouseEnter={handleNoHover}
             onClick={handleNoClick}
             onTouchStart={handleNoClick}
             style={{
-              position: 'absolute',
-              left: `${noButtonPosition.x}px`,
-              top: `${noButtonPosition.y}px`,
-            }}
-            whileHover={{ scale: 1.05 }}
-            animate={{
-              rotate: [0, -5, 5, -5, 0],
-            }}
-            transition={{
-              rotate: {
-                duration: 0.5,
-                repeat: Infinity,
-                repeatDelay: 1
-              }
+              transform: `translate(${noButtonPosition.x}px, ${noButtonPosition.y}px)`,
+              transition: 'transform 0.3s ease'
             }}
           >
             No 😢
-          </motion.button>
+          </button>
         </div>
       </motion.div>
 
